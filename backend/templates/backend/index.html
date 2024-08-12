@@ -1,0 +1,622 @@
+{% extends 'backend/base.html' %} 
+{% load static %} 
+{% block content %}
+<!-- <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="{% static 'backend/assets/img/farmers.jpg' %}" class="d-block w-100" alt="...">
+            <div class="carousel-caption">
+                <h5>Your Adventure Awaits</h5>
+                <p>Discover breathtaking landscapes and unforgettable experiences.</p>
+                <a href="#" class="btn btn-warning text-light">Read More</a>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'backend/assets/img/factory.jpg' %}" class="d-block w-100" alt="...">
+            <div class="carousel-caption">
+                <h5>Explore the Unknown</h5>
+                <p>Embark on a journey of discovery and wonder.</p>
+                <a href="#" class="btn btn-warning text-light">Read More</a>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'backend/assets/img/about1 (2).jpg' %}" class="d-block w-100" alt="...">
+            <div class="carousel-caption">
+                <h5>Create Lasting Memories</h5>
+                <p>Experience moments that will stay with you forever.</p>
+                <a href="#" class="btn btn-warning text-light">Read More</a>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div> -->
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="{% static 'backend/assets/img/farmers.jpg' %}" class="d-block w-100" alt="...">
+            <div class="carousel-caption">
+              <h5>Rooted in Quality</h5>
+              <p>Crafting premium cassava flour, starch, and animal feed with dedication and innovation. Discover the benefits of nature's versatile root.</p>
+              <a href="#">Explore Our Products</a>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'backend/assets/img/factory.jpg' %}" class="d-block w-100" alt="...">
+            <div class="carousel-caption">
+              <h5>Cassava's True Potential.</h5>
+              <p>Transforming cassava into exceptional flour, starch, and animal feed. Join us in leveraging nature's power for superior quality and sustainability.</p>
+              <a href="#">Learn More</a>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'backend/assets/img/about1 (2).jpg' %}" class="d-block w-100" alt="...">
+            <div class="carousel-caption">
+              <h5>Nourish with Nature.</h5>
+              <p>Elevate your products with our premium cassava-based solutions. From flour to feed, we offer the best in quality and sustainability.</p>
+              <a href="#">Discover More</a>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+ <!-- End of video carousel section -->
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="hero d-flex align-items-center section-bg">
+    <div class="container">
+      <div class="row justify-content-between gy-2">
+        
+        <div class="col-lg-5 order-2 order-lg-1 d-flex flex-column justify-content-center align-items-center align-items-lg-start text-center text-lg-start">
+          <h2 data-aos="fade-up">{{homedata.title}}</h2>
+          <p data-aos="fade-up" data-aos-delay="100">{{homedata.content}}</p>
+          <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
+            <a href="#book-a-table" class="btn-book-a-table">Buy Now!</a>
+          </div>
+        </div>
+
+        <div class="col-lg-7 order-1 order-lg-2 text-center text-lg-start">
+          <img src="{{homedata.image.url}}" class="img-fluid" alt="" data-aos="zoom-out" data-aos-delay="300">
+          <div class="mt-5">
+            <a href="{{homedata.video_link}}" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Hygienic Processing.</span></a>
+          </div>
+        </div>
+       
+      </div>
+    </div>
+  </section><!-- End Hero Section -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <h2>About Us</h2>
+          <p>Learn More <span>About Us</span></p>
+        </div>
+
+        <div class="row gy-4">
+          <div class="col-lg-7 position-relative about-img" style="background-image: url(../static/backend/assets/img/about.jpg) ;" data-aos="fade-up" data-aos-delay="150">
+            <div class="call-us position-absolute">
+              <h4>Make a purchase now.</h4>
+              <p>+233 594438287</p>
+            </div>
+          </div>
+          <div class="col-lg-5 d-flex align-items-end" data-aos="fade-up" data-aos-delay="300">
+            <div class="content ps-0 ps-lg-5">
+              <p class="fst-italic">{{aboutdata.content}}</p>
+              <ul>
+                <li><i class="bi bi-check2-all"></i> {{aboutdata.value_proposition_1}}</li>
+                <li><i class="bi bi-check2-all"></i> {{aboutdata.value_proposition_2}}</li>
+                <li><i class="bi bi-check2-all"></i> {{aboutdata.value_proposition_3}}</li>
+              </ul>
+              <p>
+                {{aboutdata.assuarance}}
+              </p>
+
+              <div class="position-relative mt-4">
+                <img src="{{aboutdata.video_background.url}}" class="img-fluid" alt="pitch video">
+                <a href="{{aboutdata.video_link}}" class="glightbox play-btn"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Why Us Section ======= -->
+    <section id="why-us" class="why-us section-bg">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Why Us</h2>
+          <p>Why Choose <span>Us</span></p>
+        </div>
+        <div class="row gy-4">
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="why-box">
+              <h3>Why Choose ManiTech?</h3>
+              <p>{{manitech.why_us}}</p>
+              <div class="text-center">
+                <a href="{% url 'project-details' social_project.pk %}" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
+              </div>
+            </div>
+          </div><!-- End Why Box -->
+
+          <div class="col-lg-8 d-flex align-items-center">
+            <div class="row gy-4">
+
+              <div class="col-xl-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="icon-box d-flex flex-column justify-content-center align-items-center">
+                  <i class="bi bi-clipboard-data"></i>
+                  <h4>Reduction in Post-harvest losses</h4>
+                  <p>Lack of innovative solutions in processing cassava into long lasting products results in great post harvest losses.</p>
+                </div>
+              </div><!-- End Icon Box -->
+
+              <div class="col-xl-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="icon-box d-flex flex-column justify-content-center align-items-center">
+                  <i class="bi bi-gem"></i>
+                  <h4>Increased revenue for our farmers</h4>
+                  <p>Small holder farmers usually do not have alternative than to sell their produce at a cheap price due to the fear of spoilage.</p>
+                </div>
+              </div><!-- End Icon Box -->
+
+              <div class="col-xl-4" data-aos="fade-up" data-aos-delay="400">
+                <div class="icon-box d-flex flex-column justify-content-center align-items-center">
+                  <i class="bi bi-inboxes"></i>
+                  <h4>Strengthens and stabilizes our currency</h4>
+                  <p>The governments spends quite a lot of income on the importation of wheat flour for baking activies which reults in a lot of strains on the cedi.</p>
+                </div>
+              </div><!-- End Icon Box -->
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Why Us Section -->
+
+    <!-- ======= Stats Counter Section ======= -->
+    <section id="stats-counter" class="stats-counter">
+      <div class="container" data-aos="zoom-out">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="100" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Clients</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="10" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Social Projects</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="24" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Hour Support</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Workers</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+        </div>
+
+      </div>
+    </section><!-- End Stats Counter Section -->
+
+    <!-- ======= Menu Section ======= -->
+    <section id="menu" class="menu">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <h2>Our Products.</h2>
+          <p>Our <span>Products</span></p>
+        </div>
+
+        <ul class="nav nav-tabs d-flex justify-content-center" data-aos="fade-up" data-aos-delay="200">
+
+          <li class="nav-item">
+            <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#menu-starters">
+              <h4>Cassava Flour</h4>
+            </a>
+          </li><!-- End tab nav item -->
+
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#menu-breakfast">
+              <h4>Cassava Starch</h4>
+            </a><!-- End tab nav item -->
+
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#menu-lunch">
+              <h4>Animal Feed</h4>
+            </a>
+          </li><!-- End tab nav item -->
+
+        </ul>
+
+        <div class="tab-content" data-aos="fade-up" data-aos-delay="300">
+
+          <div class="tab-pane fade active show" id="menu-starters">
+
+            <div class="tab-header text-center">
+              <h3>Cassava Flour</h3>
+            </div>
+
+            <div class="row gy-5">
+
+              <div class="col-lg-5 menu-item">
+                <a href="{% static 'backend/assets/img/menu/menu-item-1.png' %}" class="glightbox"><img src="{% static 'backend/assets/img/menu/menu-item-1.png' %}" class="menu-img img-fluid" alt="bread"></a>
+                
+              </div><!-- Menu Item -->
+
+              <div class="col-lg-7 menu-item bg-dark">
+                <p class="ingredients">
+                  Specially made to serve your taste.
+                </p>
+              </div>
+
+            </div>
+          </div><!-- End Starter Menu Content -->
+
+          <div class="tab-pane fade" id="menu-breakfast">
+
+            <div class="tab-header text-center">
+              <h3>Cassava Starch</h3>
+            </div>
+
+            <div class="row gy-5">
+
+              <div class="col-lg-5 menu-item">
+                <a href="{% static 'backend/assets/img/menu/menu-item-1.png' %}" class="glightbox"><img src="{% static 'backend/assets/img/menu/menu-item-1.png' %}" class="menu-img img-fluid" alt="bread"></a>
+                
+              </div><!-- Menu Item -->
+
+              <div class="col-lg-7 menu-item bg-dark">
+                <p class="ingredients">
+                  Specially made to serve your taste.
+                </p>
+              </div>
+
+            </div>
+          </div><!-- End biscuits Content -->
+
+          <div class="tab-pane fade" id="menu-lunch">
+
+            <div class="tab-header text-center">
+              <h3>Animal Feed</h3>
+            </div>
+
+            <div class="row gy-5">
+
+              <div class="col-lg-5 menu-item">
+                <a href="{% static 'backend/assets/img/menu/menu-item-1.png' %}" class="glightbox"><img src="{% static 'backend/assets/img/menu/menu-item-1.png' %}" class="menu-img img-fluid" alt="bread"></a>
+                
+              </div><!-- Menu Item -->
+
+              <div class="col-lg-7 menu-item bg-dark">
+                <p class="ingredients">
+                  Specially made to serve your taste.
+                </p>
+              </div>
+
+            </div>
+          </div><!-- End Gluten & Gluten Free Content -->
+        </div>
+
+      </div>
+    </section><!-- End Menu Section -->
+
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <h2>Testimonials</h2>
+          <p>What Are They <span>Saying About Us</span></p>
+        </div>
+
+        <div class="slides-1 swiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+            {% for testimony in testimonies %}
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <div class="row gy-4 justify-content-center">
+                  <div class="col-lg-6">
+                    <div class="testimonial-content">
+                      <p>
+                        <i class="bi bi-quote quote-icon-left"></i>
+                        {{testimony.testimony}}
+                        <i class="bi bi-quote quote-icon-right"></i>
+                      </p>
+                      <h3>{{testimony.name_of_customer}}</h3>
+                      <h4>{{testimony.occupation}}</h4>
+
+                      <div class="stars">
+                        <i class="bi bi-star-fill">{{testimony.rating}}</i>
+                      </div>
+
+                    </div>
+                  </div>
+                  <div class="col-lg-2 text-center">
+                    <img src="{{testimony.profile_image.url}}" class="img-fluid testimonial-img" alt="{{testimony.name_of_customer}}">
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+            <!-- End testimonial item -->
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section><!-- End Testimonials Section -->
+
+    <!-- ======= Events Section ======= -->
+    <section id="events" class="events">
+      <div class="container-fluid" data-aos="fade-up">
+
+        <div class="section-header">
+          <h2>Events</h2>
+          <p>Our <span>recent activies &</span> social projects</p>
+        </div>
+
+        <div class="slides-3 swiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+            {% for news in news_and_projects %}
+            <div class="swiper-slide event-item d-flex flex-column justify-content-end" style="background-image: url('{{news.image.url}}')">
+              <h3>{{news.title}}</h3>
+              <div class="price align-self-start">{{news.date_added}}</div>
+              <p class="description">
+                {{news.content}}
+              </p>
+              <div class="text-end priority-high">
+                <a href="{% url 'news-details'  news.pk %}" class="bg-warning text-light btn btn-md p-2">Read more</a>
+              </div>
+            </div><!-- End Event item -->
+            {% endfor %}
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section><!-- End Events Section -->
+
+    <!-- ======= Chefs Section ======= -->
+    <section id="chefs" class="chefs section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <h2>Founders</h2>
+          <p>Our <span>Proffesional</span> Team</p>
+        </div>
+
+        <div class="row gy-4">
+          {% for team_member in team_members %}
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="chef-member">
+              <div class="member-img">
+                <img src="{{team_member.profile_image.url}}" class="img-fluid" alt="{{team_member.name}}">
+                <div class="social">
+                  <a href="{{team_member.x_url}}"><i class="bi bi-twitter"></i></a>
+                  <a href="{{team_member.facebook_url}}"><i class="bi bi-facebook"></i></a>
+                  <a href="{{team_member.instagram_url}}"><i class="bi bi-instagram"></i></a>
+                  <a href="{{team_member.linkedin_url}}"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>{{team_member.name}}</h4>
+                <span>{{team_member.role}}</span>
+                <p>{{team_member.description}}</p>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+          <!-- End Team Member -->
+
+        </div>
+
+      </div>
+    </section><!-- End Chefs Section -->
+
+    <!-- ======= Book A Table Section ======= -->
+    <section id="book-a-table" class="book-a-table">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <h2>Try our flour today</h2>
+          <p>Contact <span>us for</span> information</p>
+        </div>
+
+        <div class="row g-0">
+
+          <div class="col-lg-4 reservation-img" style="background-image: url(../static/backend/assets/img/reservation.jpg);" data-aos="zoom-out" data-aos-delay="200"></div>
+
+          <div class="col-lg-8 d-flex align-items-center reservation-form-bg">
+            <form action="#" method="post" role="form" class="php-email-form" data-aos="fade-up" data-aos-delay="100">
+              <div class="row gy-4">
+                <div class="col-lg-4 col-md-6">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+                  <div class="validate"></div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email">
+                  <div class="validate"></div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                  <input type="text" class="form-control" name="phone" id="phone" placeholder="Your Phone" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+                  <div class="validate"></div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                  <input type="text" name="date" class="form-control" id="date" placeholder="Date" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+                  <div class="validate"></div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                  <input type="text" class="form-control" name="time" id="time" placeholder="Time" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+                  <div class="validate"></div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                  <input type="number" class="form-control" name="people" id="people" placeholder="# of people" data-rule="minlen:1" data-msg="Please enter at least 1 chars">
+                  <div class="validate"></div>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" rows="5" placeholder="Message"></textarea>
+                <div class="validate"></div>
+              </div>
+              <div class="mb-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your oder has been placed. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send to us</button></div>
+            </form>
+          </div><!-- End Reservation Form -->
+
+        </div>
+
+      </div>
+    </section><!-- End Book A Table Section -->
+
+    <!-- ======= Gallery Section ======= -->
+    <section id="gallery" class="gallery section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <h2>gallery</h2>
+          <p>Check <span>Our Gallery</span></p>
+        </div>
+
+        <div class="gallery-slider swiper">
+          <div class="swiper-wrapper align-items-center">
+            {% for image in gallery %}
+            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="{{image.image.url}}"><img src="{{image.image.url}}" class="img-fluid" alt="{{image.image.alt}}"></a>
+            </div>
+            {% endfor %}
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section><!-- End Gallery Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <h2>Contact</h2>
+          <p>Need Help? <span>Contact Us</span></p>
+        </div>
+
+        <div class="mb-3">
+          <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe>
+        </div><!-- End Google Maps -->
+
+        <div class="row gy-4">
+
+          <div class="col-md-6">
+            <div class="info-item  d-flex align-items-center">
+              <i class="icon bi bi-map flex-shrink-0"></i>
+              <div>
+                <h3>Our Address</h3>
+                <p>NT-0236-9155, Tamale, Ghana</p>
+              </div>
+            </div>
+          </div><!-- End Info Item -->
+
+          <div class="col-md-6">
+            <div class="info-item d-flex align-items-center">
+              <i class="icon bi bi-envelope flex-shrink-0"></i>
+              <div>
+                <h3>Email Us</h3>
+                <p>manitechltd@gmail.com</p>
+              </div>
+            </div>
+          </div><!-- End Info Item -->
+
+          <div class="col-md-6">
+            <div class="info-item  d-flex align-items-center">
+              <i class="icon bi bi-telephone flex-shrink-0"></i>
+              <div>
+                <h3>Call Us</h3>
+                <p>+233 594 438 287</p>
+              </div>
+            </div>
+          </div><!-- End Info Item -->
+
+          <div class="col-md-6">
+            <div class="info-item  d-flex align-items-center">
+              <i class="icon bi bi-share flex-shrink-0"></i>
+              <div>
+                <h3>Opening Hours</h3>
+                <div><strong>Mon-Sat:</strong> 6AM - 23PM;
+                  <strong>Sunday:</strong> Closed
+                </div>
+              </div>
+            </div>
+          </div><!-- End Info Item -->
+
+        </div>
+
+        <form action="forms/contact.php" method="post" role="form" class="php-email-form p-3 p-md-4">
+          <div class="row">
+            <div class="col-xl-6 form-group">
+              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+            </div>
+            <div class="col-xl-6 form-group">
+              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+          </div>
+          <div class="my-3">
+            <div class="loading">Loading</div>
+            <div class="error-message"></div>
+            <div class="sent-message">Your message has been sent. Thank you!</div>
+          </div>
+          <div class="text-center"><button type="submit">Send Message</button></div>
+        </form><!--End Contact Form -->
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+{% endblock content %}
